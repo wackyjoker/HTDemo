@@ -1,0 +1,45 @@
+/*	general styles
+*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	opacity: 1;
+	color: white;
+}
+a:hover{
+	opacity: 0.75;
+}
+
+nav{
+	
+
+}
+ul{
+	width: 300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	list-style:none;
+
+}
+
+header {
+
+position: absolute;
+width: 100%;
+z-index: 10;
+font:bold 20px sans-serif;
+font-family:"Quicksand",sans-serif;	
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding:35px 100px 0;
+animation: 1s fadein 0.5s forwards;
+background-color:#777; 
+}
