@@ -14,7 +14,7 @@
 <body>
 <header>
 	
-	<h2><a href="#"><img src="images/companyLogo.PNG" style="min-width: 200px;filter: brightness(50%);"></a></h2>
+	<h2><a class="head-anc" href="#"><img src="images/companyLogo.PNG" style="min-width: 200px;filter: brightness(50%);"></a></h2>
 	<div style="margin-right: 100px;">
 	<nav style="float: right;">
 		
@@ -22,12 +22,12 @@
 			
 			 		 <%# if(!currentUser){%>   <!-- waiting autentication  -->
 
-			 		<li><a href='/login'>Sign in</a></li>
+			 		<li><a class="head-anc" href='/login'>Sign in</a></li>
 			 	<%# }else{%> 
 			 			<!-- <li><a href="#">welcome <%#=currentUser.username %></a></li>  -->
-			 		<li><a href="#">Sign out</a></li>
+			 		<li><a class="head-anc" href="#">Sign out</a></li>
 			 		<%# }%> 
-			 		<li><a id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li>
+			 		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li>
 
 			 	
 	</nav>
@@ -65,7 +65,7 @@
 	<h3 class="s2-title">Ours Rooms</h3>
 	<p class="s2-p">123 </p>
 
-	<hr>
+	<hr id="s2-hr">
 	</div>
 	<ul class="grid">
 		<li class="small" style="background-image:url(images/s2img1.jpg);"></li>

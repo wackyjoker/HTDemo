@@ -21,9 +21,12 @@ a{
 	text-decoration: none;
 	opacity:0.75;
 	color: white;
-	min-width: 90px;
+	
 	float:left; 
 	clear:left;
+}
+.head-anc{
+	min-width: 90px;
 }
 a:hover{
 	opacity:1;
@@ -50,7 +53,7 @@ section{
 	flex-wrap: wrap;
 	justify-content: center;
 }
-hr{
+#s2-hr{
 	width: 250px;
 	height: 3px;
 	background-color:#3f51b5;
