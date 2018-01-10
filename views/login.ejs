@@ -5,18 +5,18 @@
 		<div id="content-container-register">   <!-- register area -->
 	<p style="align-self: center;font-size:30px;">You Don't have an Account?</p>
 	<hr style="margin:20px 10px;width: 80%">
-	<form action="POST"> <!-- waiting for back-end -->
+	<form action="/login" method="POST"> <!-- waiting for back-end -->
 		<div>
 			<h4>UserName</h4>
-			<input class="input-childs" name="" type="text" style="align-self: center;" placeholder="alphabet&numbers123">
+			<input class="input-childs" name="username" type="text" style="align-self: center;" placeholder="alphabet&numbers123">
 		</div>
 		<div>
 			<h4>Email Adress</h4>
-			<input class="input-childs" type="email" name="" placeholder="john@doe.com" value="">
+			<input class="input-childs" type="email" name="password" placeholder="john@doe.com" value="">
 		</div>
 		<div>
 			<h4>Password</h4>
-			<input class="input-childs" type="password" name="" placeholder="password" >
+			<input class="input-childs" type="password" name="email" placeholder="password" >
 		</div>
 		<div>
 			<button id="btn"><i class="fas fa-users"></i>&nbsp Join Us Now</button>
@@ -27,7 +27,7 @@
 	<p style="align-self: center;font-size:30px">Log In First</p>
 	<hr style="margin:20px 10px;width: 80%;">
 	<form>
-		<div action="POST">
+		<div action="/login" method="POST">
 			<h4>UserName</h4>
 			<input class="input-childs" name="" type="text" style="align-self: center;" placeholder="Username/Email" value="">
 			

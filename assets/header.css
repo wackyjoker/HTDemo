@@ -98,7 +98,7 @@ box-shadow: 0 0 0 1pt #809fff;
 #btn:hover{
   background-color: #5aabf2;
   box-shadow: 0 4px #5aabf2 ;
-  background-image: linear-gradient(to bottom,#379AEF 0,#2F85CE 100%)
+  background-image: linear-gradient(to top,#379AEF 0,#2F85CE 100%)
   top:2px;
   opacity: 0.85;
 }
