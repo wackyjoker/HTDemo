@@ -1,11 +1,13 @@
 /*	general styles
 */
-
+html,body{
+	min-height: 100%;
+}
 *{
 	margin:0;
 	padding:0;
-	box-sizing: border-box;
-}
+	box-sizing:border-box;
+	}
 
 a{
 	text-decoration: none;
@@ -16,11 +18,7 @@ a:hover{
 	opacity: 0.75;
 }
 
-nav{
-	
-
-}
-ul{
+#nav-ul{
 	width: 300px;
 	display: flex;
 	flex-direction: row;
@@ -40,6 +38,73 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding:35px 100px 0;
-animation: 1s fadein 0.5s forwards;
 background-color:#777; 
+}
+
+.login-container{
+	padding-top: 160px;
+	display: flex;
+	flex-direction: row;
+}
+#content-container-login,#content-container-register{
+	display: flex;
+	flex-direction: column;
+	padding: 50px 10px;
+	border: 2px solid rgb(214, 212, 212);
+	background-color: #f2f2f2;
+	width: 30%;
+	
+}
+
+#content-container-register{
+	margin-right:5%;
+	margin-left:20%;
+
+}
+#content-container-login{
+	
+}
+.input-childs{
+	width: 50%;
+	min-height: 30px;
+	border-radius: 4px;
+	margin: 15px 0;
+	outline: none;
+	font-size: 15px;
+}
+.input-childs:hover,.input-childs:focus{
+box-shadow: 0 0 0 1pt #809fff;
+}
+#btn{
+  box-shadow: 0 6px #1387ec ;
+  text-decoration: none;
+  background-color: #379AEF;
+  color: white;
+  font-size:20px;
+
+  border-radius : 8px;
+  border: none;
+  min-height:40px;
+  width: 35%;
+  outline: none;
+  text-decoration-line: none;
+  cursor: pointer;
+  position: relative;
+  padding-top:5px;
+  margin:auto;
+  background-image: linear-gradient(to bottom,#379AEF 0,#2F85CE 100%)
+    ;
+}
+#btn:hover{
+  background-color: #5aabf2;
+  box-shadow: 0 4px #5aabf2 ;
+  background-image: linear-gradient(to bottom,#379AEF 0,#2F85CE 100%)
+  top:2px;
+  opacity: 0.85;
+}
+
+#btn:active{
+ background-color: #808080;
+  box-shadow: 0 0px #cccccc ;
+  top:6px;
 }

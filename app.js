@@ -20,6 +20,7 @@ var indexRoute		 = require("./routes/landing");
 	app.set('view engine','ejs');
 	app.use("/assets", express.static(__dirname + "/assets"));
 	app.use("/images",express.static(__dirname + "/images"));
+	app.use("/webfonts",express.static(__dirname+"/assets/webfonts"));
 	app.use(favicon(path.join(__dirname, 'images', 'favicon.ico')));
 
 

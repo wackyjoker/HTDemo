@@ -11,5 +11,8 @@ router.get("/login",function(req,res){
 	res.render("login");
 });//Login page
 
+router.post("/login",function(req,res){
+	res.send("testing post");
+});
 
 module.exports = router;
