@@ -19,8 +19,12 @@
 	<nav>
 
 		<ul id="nav-ul">
+			<%# if(!currentUser){%>   <!-- waiting autentication  -->
 		<li><a href="#">Sign in</a></li>
+		<%# }else{%> 
+			 			<!-- <li><a href="#">welcome <%#=currentUser.username %></a></li>  -->
 		<li><a href="#">Sign Out</a></li>
+		<%# }%> 
 		<li><a href="#"><i class="fab fa-github"></i>github</a></li>
 		</ul>
 
