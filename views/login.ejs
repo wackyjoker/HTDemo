@@ -3,14 +3,6 @@
 
 <section>
 	<div class="overall-container">
-			<%if(!currentUser){ %>
-			<div>MADAFAKA LOGIN NOW</div>
-			<%}else{%>
-			<div>MEH YOU ARE COOL NOW</div>
-			<%}%>
-			<script type="text/javascript">
-				console.log(currentUser);
-			</script>
 		<% if(success && success.length>0){%>            <!-- this is for login success flash message -->
 	<div class="success-msg"><span style="margin-left:10%; "><%=success%></span><i class="fa fa-window-close btn-success" aria-hidden="true"></i></div>
 		<%}%>
@@ -58,7 +50,6 @@
  		 <%= error%> <i class="fa fa-window-close btn-error" aria-hidden="true"></i>
  		 </div>
  		<% }%>
- 		
 			<%}%> 
 			<h4>UserName</h4>
 			<input class="input-childs" name="username" type="text"  placeholder="Username/Email" value="">
