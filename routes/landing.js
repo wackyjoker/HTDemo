@@ -9,7 +9,7 @@ router.get('/', function(req,res){
 
 
 
-router.post("/login",function(req,res){		//register route
+router.post("/register",function(req,res){		//register route
 	var newUser = new User({
 		email: req.body.email,
 		username: req.body.username,
@@ -30,10 +30,16 @@ router.post("/login",function(req,res){		//register route
 
 });
 
+
 router.get("/login",function(req,res){
 	res.render("login");
 });//Login route
 
 
+router.post("/login",passport.authenticate("local",{ // login POST
+	successRedirect : "/",
+	failureRedirect : "/login"
+}),function(req,res){
+});
 
 module.exports = router;

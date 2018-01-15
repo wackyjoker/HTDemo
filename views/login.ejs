@@ -5,7 +5,7 @@
 		<div id="content-container-register">   <!-- register area -->
 	<p style="align-self: center;font-size:30px;">You Don't have an Account?</p>
 	<hr style="margin:20px 10px;width: 80%">
-	<form action="/login" method="POST"> <!-- waiting for back-end -->
+	<form action="/register" method="POST"> <!-- waiting for back-end -->
 		<div>
 			<h4>UserName</h4>
 			<input class="input-childs" name="username" type="text" style="align-self: center;" placeholder="alphabet&numbers123">
@@ -19,7 +19,7 @@
 			<input class="input-childs" type="password" name="email" placeholder="password" >
 		</div>
 		<div>
-			<button id="btn"><i class="fas fa-users"></i>&nbsp Join Us Now</button>
+			<button class="btn-login"><i class="fas fa-users"></i>&nbsp Join Us Now</button>
 		</div>
 	</form>
 		</div>
@@ -37,11 +37,11 @@
 			<input class="input-childs" type="password" name="" placeholder="password" value="" >
 		</div>
 		<div>
-			<button id="btn"><i class="fas fa-sign-in-alt"></i>&nbsp Sign In Now</button>
+			<button class="btn-login"><i class="fas fa-sign-in-alt"></i>&nbsp Sign In Now</button>
 		</div>
 	</form>
 		</div>
 </div>
 </section>
-<script type="text/javascript" src="assets/action.js"></script>
+
 <%include partials/footer%>

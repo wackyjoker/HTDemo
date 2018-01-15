@@ -75,7 +75,7 @@ background-color:#777;
 .input-childs:hover,.input-childs:focus{
 box-shadow: 0 0 0 1pt #809fff;
 }
-#btn{
+.btn-login{
   box-shadow: 0 6px #1387ec ;
   text-decoration: none;
   background-color: #379AEF;
@@ -95,7 +95,7 @@ box-shadow: 0 0 0 1pt #809fff;
   background-image: linear-gradient(to bottom,#379AEF 0,#2F85CE 100%)
     ;
 }
-#btn:hover{
+.btn-login:hover{
   background-color: #5aabf2;
   box-shadow: 0 4px #5aabf2 ;
   background-image: linear-gradient(to top,#379AEF 0,#2F85CE 100%)
@@ -103,7 +103,7 @@ box-shadow: 0 0 0 1pt #809fff;
   opacity: 0.85;
 }
 
-#btn:active{
+.btn-login:active{
  background-color: #808080;
   box-shadow: 0 0px #cccccc ;
   top:6px;
