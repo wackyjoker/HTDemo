@@ -7,39 +7,132 @@ router.get('/', function(req,res){
 	res.render("index");
 }); // Landing page
 
-
-
-router.post("/register",function(req,res){		//register route
-	var newUser = new User({
-		email: req.body.email,
-		username: req.body.username,
-		password: req.body.password,
-		passwordConf: req.body.passwordConf
-	});
-	User.register(newUser,req.body.password,function(err,user){
-		if(err){
-			// req.flash("error",err.message); 
-			return res.render("login");
-		} 
-
-			passport.authenticate("local")(req,res,function(){
-				// req.flash("success","Welcome"+user.username);
-				res.redirect("/login");
-			});
-		});
-
-});
-
-
-router.get("/login",function(req,res){
+router.get("/login",function(req,res,next){
 	res.render("login");
-});//Login route
-
-
-router.post("/login",passport.authenticate("local",{ // login POST
-	successRedirect : "/",
-	failureRedirect : "/login"
-}),function(req,res){
 });
+
+
+
+// login/register page logic
+router.post("/register",function(req,res,next){
+ console.log(req.user);
+  var   username=req.body.username,
+        email   =    req.body.email,
+        password=req.body.password,
+        passwordConf= req.body.passwordConf;
+
+      req.checkBody("username","Username is Required").notEmpty();
+      req.checkBody("email","Email is Required").notEmpty();
+      req.checkBody("email","Email is not valid").isEmail();
+      req.checkBody("password","Password is required").notEmpty();
+      req.checkBody("passwordConf","Passwords do  not match").equals(req.body.password);
+      
+      var errors = req.validationErrors();
+      if(errors){
+        req.flash("error_msg",errors);
+       return  res.redirect("/login");
+
+    }else {
+      var userData = new User({
+      email: email,
+      username: username,
+      password: password,
+      passwordConf: passwordConf,
+    });
+         User.create(userData, function (error, user) {
+      if (error) {return next(error);
+      } else {
+        req.session.userId = user._id;
+        req.flash("success","Registed Sucessfully");
+        return res.redirect('/login');
+      }
+    });}
+       // ------------------------------------------------------------------
+
+//   passport.authenticate("local",{
+//   successRedirect : "/login",
+//   successFlash:'Successfully Logged in .',
+//   failureRedirect : "/login",
+//   failureFlash: 'Invalid username or password.'
+// }),function(req,res){
+//      return res.redirect('/login');
+// };
+
+    //   console.log("we are at stage 2 authenticate session");
+    //   if (error || !user) {
+    //     var err = new Error('Wrong email or password.');
+    //     err.status = 401;
+    //     return next(err);
+    //   } else {
+    //     console.log("\n"+"again, we made it----we are at stage 3");
+    //     req.session.userId = user._id;
+    //     return res.redirect("/profile");
+    //   }
+    // });
+//     --------------------------------------------------------------------------
+
+});
+
+
+// req.checkBody("username","Username is Required").notEmpty();
+//       req.checkBody("email","Email is Required").notEmpty();
+//       req.checkBody("email","Email is not valid").isEmail();
+//       req.checkBody("password","Password is required").notEmpty();
+//       req.checkBody("passwordConf","Passwords do  not match").equals(req.body.password);
+      
+//       var errors = req.validationErrors();
+//       if(errors){
+//         res.render("login",{ errors:errors});
+//       } else {
+//         console.log("smooooooth");
+
+
+
+//This is for test purpose. not a real route
+// router.get('/profile', function (req, res, next) {
+//   User.findById(req.session.userId)
+//     .exec(function (error, user) {
+//       if (error) {
+//         return next(error);
+//       } else {
+//         if (user === null) {
+//           var err = new Error('Not authorized! Go back!');
+//           err.status = 400;
+//           return next(err);
+//         } else {
+//           return res.send('<h1>UserName: </h1>' + user.username + '<h2>EMail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+//         }
+//       }
+//     });
+// });
+
+
+router.post("/logins",passport.authenticate("local",{ // login POST
+  successRedirect : "/login",
+  successFlash:true,
+  failureRedirect : "/login",
+  // badRequestMessage:"something went wrong!!",
+  failureFlash:true
+}),function(req,res){
+  console.log(req.body);
+});
+
+
+router.get('/logout', function (req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function (err) {
+      if (err) {
+        return next(err);
+      } else {
+
+        return res.redirect('/');
+      }
+    });
+  }
+});
+
+
+
 
 module.exports = router;

@@ -19,15 +19,20 @@
 	<nav style="float: right;">
 		
 		
-			
-			 		 <%# if(!currentUser){%>   <!-- waiting autentication  -->
 
-			 		<li><a class="head-anc" href='/login'>Sign in</a></li>
-			 	<%# }else{%> 
-			 			<!-- <li><a href="#">welcome <%#=currentUser.username %></a></li>  -->
-			 		<li><a class="head-anc" href="#">Sign out</a></li>
-			 		<%# }%> 
-			 		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li>
+
+			 		
+			
+			<%if(!currentUser){%>  
+		<li><a class="head-anc" href='/login'>Sign in</a></li>
+		<% }else{%> 
+			 			<li><a href="#">Welcome <%=currentUser.username %></a></li> 
+		<li><a class="head-anc" href="/logout">Sign out</a></li>
+		<% }%> 
+		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li>
+	
+			 		 
+			 	
 
 			 	
 	</nav>
