@@ -47,44 +47,8 @@ router.post("/register",function(req,res,next){
         return res.redirect('/login');
       }
     });}
-       // ------------------------------------------------------------------
-
-//   passport.authenticate("local",{
-//   successRedirect : "/login",
-//   successFlash:'Successfully Logged in .',
-//   failureRedirect : "/login",
-//   failureFlash: 'Invalid username or password.'
-// }),function(req,res){
-//      return res.redirect('/login');
-// };
-
-    //   console.log("we are at stage 2 authenticate session");
-    //   if (error || !user) {
-    //     var err = new Error('Wrong email or password.');
-    //     err.status = 401;
-    //     return next(err);
-    //   } else {
-    //     console.log("\n"+"again, we made it----we are at stage 3");
-    //     req.session.userId = user._id;
-    //     return res.redirect("/profile");
-    //   }
-    // });
-//     --------------------------------------------------------------------------
-
 });
 
-
-// req.checkBody("username","Username is Required").notEmpty();
-//       req.checkBody("email","Email is Required").notEmpty();
-//       req.checkBody("email","Email is not valid").isEmail();
-//       req.checkBody("password","Password is required").notEmpty();
-//       req.checkBody("passwordConf","Passwords do  not match").equals(req.body.password);
-      
-//       var errors = req.validationErrors();
-//       if(errors){
-//         res.render("login",{ errors:errors});
-//       } else {
-//         console.log("smooooooth");
 
 
 
@@ -115,6 +79,8 @@ router.post("/logins",passport.authenticate("local",{ // login POST
   failureFlash:true
 }),function(req,res){
   console.log(req.body);
+  console.log("---------------\n");
+  console.log(req.session);
 });
 
 
@@ -125,7 +91,7 @@ router.get('/logout', function (req, res, next) {
       if (err) {
         return next(err);
       } else {
-
+        req.flash("success","Sucessfully Logged Out");
         return res.redirect('/');
       }
     });
