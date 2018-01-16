@@ -21,9 +21,9 @@ a{
 	text-decoration: none;
 	opacity:0.75;
 	color: white;
-	
 	float:left; 
 	clear:left;
+	white-space: nowrap;
 }
 .head-anc{
 	min-width: 90px;

@@ -13,6 +13,8 @@ a{
 	text-decoration: none;
 	opacity: 1;
 	color: white;
+
+    white-space: nowrap;
 }
 a:hover{
 	opacity: 0.75;

@@ -1,6 +1,7 @@
 var express = require("express"), //route page
 	router  = express.Router(),
 	passport= require("passport"),
+  middlewareObj = require("../middleware/index"),
 	User 	= require("../models/user");
 
 router.get('/', function(req,res){
@@ -31,7 +32,6 @@ router.post("/register",function(req,res,next){
       if(errors){
         req.flash("error_msg",errors);
        return  res.redirect("/login");
-
     }else {
       var userData = new User({
       email: email,
@@ -50,9 +50,7 @@ router.post("/register",function(req,res,next){
 });
 
 
-
-
-//This is for test purpose. not a real route
+//This is temp dashboard waiting to be done.
 // router.get('/profile', function (req, res, next) {
 //   User.findById(req.session.userId)
 //     .exec(function (error, user) {
@@ -78,27 +76,28 @@ router.post("/logins",passport.authenticate("local",{ // login POST
   // badRequestMessage:"something went wrong!!",
   failureFlash:true
 }),function(req,res){
-  console.log(req.body);
-  console.log("---------------\n");
-  console.log(req.session);
 });
+
+
+
+
+router.get("/query",middlewareObj.isLoggedIn,function(req,res,next){
+  if(req.isAuthenticated()){
+  res.send("you've Logged In");
+} else {
+  req.flash("error","You must log in first");
+  res.redirect("/login");
+}
+
+});
+
 
 
 router.get('/logout', function (req, res, next) {
-  if (req.session) {
-    // delete session object
-    req.session.destroy(function (err) {
-      if (err) {
-        return next(err);
-      } else {
-        req.flash("success","Sucessfully Logged Out");
-        return res.redirect('/');
-      }
-    });
-  }
+    req.logout();
+    req.flash("success","Sucessfully Logged Out");
+    res.redirect('/login');
 });
-
-
 
 
 module.exports = router;

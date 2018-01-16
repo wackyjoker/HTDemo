@@ -17,24 +17,14 @@
 	<h2><a class="head-anc" href="#"><img src="images/companyLogo.PNG" style="min-width: 200px;filter: brightness(50%);"></a></h2>
 	<div style="margin-right: 100px;">
 	<nav style="float: right;">
-		
-		
-
-
-			 		
-			
 			<%if(!currentUser){%>  
 		<li><a class="head-anc" href='/login'>Sign in</a></li>
+
 		<% }else{%> 
 			 			<li><a href="#">Welcome <%=currentUser.username %></a></li> 
 		<li><a class="head-anc" href="/logout">Sign out</a></li>
 		<% }%> 
-		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li>
-	
-			 		 
-			 	
-
-			 	
+		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li> 	
 	</nav>
 	</div>
 	</header>
@@ -44,9 +34,8 @@
 	<div class="hero-content-area">
 		<h1>Booking Service</h1>
 		<h3 id="s1-h3">Unmissable Adventure Tours Around The World</h3>
-		
 	</div>
-	<form id="search-hotel-form">
+	<form id="search-hotel-form" action="/query" method="GET">
 	<div id="search-bar">
 		<div class="form-items "><input type="text" class="input-childs child1" name="Hotel-location" placeholder="Location ex:Barcelona" ></div>
 		<div class="form-items">

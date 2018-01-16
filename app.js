@@ -1,22 +1,29 @@
-var express 		 = require("express"),
-	app 			 = express(),
-	mongoose		 = require("mongoose"),
-	passport		 = require("passport"),
-	LocalStrategy	 = require("passport-local"),
-	User    	 	 = require('./models/user'),
-	path 		 	 = require('path'),
-	bodyParser 		 = require("body-parser"),
-	session  		 = require("express-session"),
-	expressValidator = require("express-validator"),
-	MongoStore 		 = require('connect-mongo')(session),
-	flash			 = require('connect-flash'),
-	favicon 		 = require("serve-favicon");
+var express 		   = require("express"),
+	  app 	    		 = express(),
+  	mongoose	  	 = require("mongoose"),
+  	passport	  	 = require("passport"),
+  	LocalStrategy	 = require("passport-local"),
+  	User      	 	 = require('./models/user'),
+  	path 	     	 	 = require('path'),
+  	bodyParser 		 = require("body-parser"),
+    cookieParser   = require("cookie-parser"),
+  	session  	   	 = require("express-session"),
+  expressValidator = require("express-validator"),
+  	MongoStore 	 	 = require('connect-mongo')(session),
+  	flash		    	 = require('connect-flash'),
+  	favicon 	  	 = require("serve-favicon");
 
 
 
 	app.set('view engine','ejs');
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({extended: true}));
+
+
+
+  // body parse middleware
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended: true}));
+  app.use(cookieParser());
+
 	app.use("/assets", express.static(__dirname + "/assets"));
 	app.use("/images",express.static(__dirname + "/images"));
 	app.use("/webfonts",express.static(__dirname+"/assets/webfonts"));
@@ -40,12 +47,15 @@ db.once('open', function () {
 //use sessions for tracking logins
 	app.use(session({
 	secret:"emma is still the most brilliant and beutiful woman",
-	resave:true,
+	resave:false,
 	saveUninitialized:false,
-	store: new MongoStore({
-    mongooseConnection: db
-})
+// 	store: new MongoStore({
+//     mongooseConnection: db
+// })
 }));
+// passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 // connect flash
 app.use(flash());
@@ -70,25 +80,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(
    function(username, password, callback) {
-   	console.log("here we go");
-  		console.log("-------------"+"\n"+User);
     User.getUserByUsername(username,function(err,users){
       if(err){
         return callback(err);
       }
-      console.log("-----------\n no error here, Username:" +users);
       if(!users){
-      	console.log("------\n no user here");
         return callback(null,false,{message:"User Doesn't Exist"});
       } else {
-      	console.log("-------------\n checking User's password :  "+users.password);
       	 User.confirmPassword(password,users.password,function(err,confirmed){
-      	
         if(err){
           return callback(err);
         }
         if(confirmed){
-        	console.log("----------------\n Sucessfully logged in    "+users);
           return callback(null,users,{message:"Login Successful, Welcome "+users.username});
         } else {
           return callback(null,false,{message:"Invalid Password"});
