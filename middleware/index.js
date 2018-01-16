@@ -2,7 +2,7 @@ var middlewareObj = {};
 
 
 
-middlewareObj.isLoggedIn= function (req,res,next){  // is logged in function
+middlewareObj.isLoggedIn = function (req,res,next){  // is logged in function
 	if(req.isAuthenticated()){
 		return next();
 	}
