@@ -3,7 +3,7 @@ var express 		   = require("express"),
   	mongoose	  	 = require("mongoose"),
   	passport	  	 = require("passport"),
   	LocalStrategy	 = require("passport-local"),
-  	User      	 	 = require('./models/user'),
+  	User      	 	 = require('./src/models/user'),
   	path 	     	 	 = require('path'),
   	bodyParser 		 = require("body-parser"),
     cookieParser   = require("cookie-parser"),
@@ -14,9 +14,9 @@ var express 		   = require("express"),
   	favicon 	  	 = require("serve-favicon");
 
 
-
+    app.set('views', path.join(__dirname, '/src/views'));
 	app.set('view engine','ejs');
-
+ 
 
 
   // body parse middleware
@@ -24,10 +24,10 @@ var express 		   = require("express"),
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(cookieParser());
 
-	app.use("/assets", express.static(__dirname + "/assets"));
-	app.use("/images",express.static(__dirname + "/images"));
-	app.use("/webfonts",express.static(__dirname+"/assets/webfonts"));
-	app.use(favicon(path.join(__dirname, 'images', 'favicon.ico')));
+	app.use("/assets", express.static(__dirname + "/public/assets"));
+	app.use("/images",express.static(__dirname + "/public/images"));
+	app.use("/webfonts",express.static(__dirname+"/public/assets/webfonts"));
+	app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 	
 	
 
@@ -110,7 +110,7 @@ passport.deserializeUser(function(id, callback) {
   });
 });
 // include routes
-var indexRoute		 = require("./routes/landing");
+var indexRoute		 = require("./src/routes/landing");
 app.use(indexRoute);
 
 
@@ -137,6 +137,6 @@ app.listen(process.env.PORT || 3001, function(err){
 	if(err){
 		console.log(err);
 			} else {
-	console.log('Server Started');
+	console.log('Server Started at 3001');
 					}
 	});
