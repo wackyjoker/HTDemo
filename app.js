@@ -10,7 +10,8 @@ var express 		   = require("express"),
   	session  	   	 = require("express-session"),
   expressValidator = require("express-validator"),
   	MongoStore 	 	 = require('connect-mongo')(session),
-  	flash		    	 = require('connect-flash'),
+    flash		    	 = require('connect-flash'),
+    bcrypt         = require('bcrypt'),
   	favicon 	  	 = require("serve-favicon");
 
 
