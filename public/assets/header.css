@@ -54,12 +54,10 @@ background-color:#777;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	
-	
 }
 #content-container-login,#content-container-register{
 	display: flex;
 	flex-basis:530px;
-	
 	flex-direction: column;
 	padding: 50px 10px;
 	border: 2px solid rgb(214, 212, 212);

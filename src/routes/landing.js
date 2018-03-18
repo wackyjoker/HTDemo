@@ -77,6 +77,7 @@ router.post("/logins",passport.authenticate("local",{ // login POST
   // badRequestMessage:"something went wrong!!",
   failureFlash:true
 }),function(req,res){
+  
 });
 
 

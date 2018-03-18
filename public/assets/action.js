@@ -34,5 +34,7 @@ function updateInfo(data){
    para.textContent = data;
  
   }
+// image slider
+ 
 
 
