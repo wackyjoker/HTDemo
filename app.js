@@ -47,7 +47,7 @@ db.once('open', function () {
 
 //use sessions for tracking logins
 	app.use(session({
-	secret:"emma is still the most brilliant and beutiful woman",
+	secret:"emma watson is still the most brilliant and beutiful woman",
 	resave:false,
 	saveUninitialized:false,
 // 	store: new MongoStore({
