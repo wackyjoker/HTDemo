@@ -1,4 +1,4 @@
-var express 		   = require("express"),
+const express 		   = require("express"),
 	  app 	    		 = express(),
   	mongoose	  	 = require("mongoose"),
   	passport	  	 = require("passport"),

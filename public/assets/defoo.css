@@ -72,11 +72,9 @@ section h3.title{
 	text-transform: capitalize;
 	font:bold 32px "Open Sans",sans-serif;
 }
+
 /*header style*/
-
-
 header {
-
 position: absolute;
 width: 100%;
 z-index: 10;
@@ -106,8 +104,7 @@ header nav{
 	width:200px;
 }
 header nav li{
-	marign:0 15px;
-
+	margin:0 15px;
 }
 
 /*Hero Styles*/
@@ -151,12 +148,8 @@ header nav li{
 .hero-content-area{
 	display: flex;
 	flex-direction: column;
-	
 	opacity:0;
-	
 	animation:0.5s slidefade 0.5s forwards;
-
-
 }
 
 @keyframes slidefade {
@@ -261,3 +254,31 @@ box-shadow: 0 0 0 1pt #809fff;
 .destinations .grid li.small{
 	flex-basis: 25%;
 }
+
+
+.s2-list{
+	padding: 0;
+    margin: 0;
+	list-style: none;
+	display: flex;
+	flex-flow:row wrap;
+	justify-content: space-around;
+}
+.s2-img{
+	transition-duration: 5s;
+	line-height: 10em;
+}
+
+.s2-img:hover{
+	line-height: 10em;	
+}
+.s2-img a{
+	opacity:1;
+}
+.s2-img a img{
+	z-index:10;
+	height: 10em;
+	width:16em;
+}
+
+

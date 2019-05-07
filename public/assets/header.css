@@ -61,16 +61,12 @@ background-color:#777;
 	flex-direction: column;
 	padding: 50px 10px;
 	border: 2px solid rgb(214, 212, 212);
-
 	background-color: #f2f2f2;
 	max-width: 530px;
-	
 }
 
 #content-container-register{
 	margin-top: 5%;
-	
-
 }
 #content-container-login{
 	margin-top: 5%;
@@ -109,7 +105,7 @@ box-shadow: 0 0 0 1pt #809fff;
 .btn-login:hover{
   background-color: #5aabf2;
   box-shadow: 0 4px #5aabf2 ;
-  background-image: linear-gradient(to top,#379AEF 0,#2F85CE 100%)
+  background-image: linear-gradient(to top,#379AEF 0,#2F85CE 100%);
   top:2px;
   opacity: 0.85;
 }
@@ -121,9 +117,8 @@ box-shadow: 0 0 0 1pt #809fff;
 }
 
 .fa-user:before {
-  content: "\f007"; }
-
-
+  content: "\f007"; 
+}
   .alert-error{
   	text-align: center;
   	background-color: #ffb3b3;
