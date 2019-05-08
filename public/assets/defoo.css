@@ -6,7 +6,6 @@
 	box-sizing: border-box;
 }
 
-ul,
 nav{
 	list-style:none;
 	float: right;
@@ -262,23 +261,72 @@ box-shadow: 0 0 0 1pt #809fff;
 	list-style: none;
 	display: flex;
 	flex-flow:row wrap;
-	justify-content: space-around;
+	
+	
+	
 }
-.s2-img{
-	transition-duration: 5s;
-	line-height: 10em;
+.s2-list li{
+	
+	width: 31%;
+	min-width:20em;
+	background-clip: content-box;
+	background-size:110%;
+	background-position:center;
+	background-repeat:no-repeat;
+	padding:10px;
+	flex-basis:30%;
+	transition: all .3s ease-in-out;
 }
 
-.s2-img:hover{
-	line-height: 10em;	
+.s2-list li:hover{
+	background-size:100%;
+	cursor:pointer;
 }
-.s2-img a{
+.s2-list li:nth-child(1){
+height:30em;
+}
+.s2-list li:nth-child(4){
+	
+	height:20em;
+}
+.s2-list li:nth-child(5){
+	height:25em;
+	margin-top:-3em;
+}
+.s2-list li:nth-child(n+6){
+	margin-top:1em;
+	height:18em;
+	}
+	.s2-list li:nth-child(9){
+		margin-top:-2em;
+		height:25em;
+		}
+		.s2-list li:nth-last-child(1){
+			margin-top:-19em;
+			margin-left:31%;
+		}	
+#img-stick{
+	height:40em;
+	margin-top: -1em;
+}
+
+.overlay-text {
+	font-weight: bold;
+	position:relative;
+	height:3em;
+	width:40%;
+	top: 80%;
+	left: 50%;
+	opacity:0;
+	transition:1s;
+	transform: translate(-50%, -50%);
+	background:white;
+	text-align: center;
+	padding:10px;
+	text-transform: capitalize;
+}
+.s2-list li:hover .overlay-text{
 	opacity:1;
-}
-.s2-img a img{
-	z-index:10;
-	height: 10em;
-	width:16em;
 }
 
 
