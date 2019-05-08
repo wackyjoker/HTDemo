@@ -7,10 +7,13 @@
 	display:flex;
 	flex-direction: column;
 }
-#countDown h1{
-	align-items:end;
+#countDown h3{
+	text-align:center;
 }
-
+#popupBoxClose{
+	cursor: pointer;
+	background: white;
+}
 /*General Styles*/
 *{
 	margin:0;
