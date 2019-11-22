@@ -1,0 +1,34 @@
+{
+  "name": "projectd",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.1.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "mongoose": "^5.7.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0",
+    "passport-local-mongoose-email": "^0.1.4",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev-start": "nodemon app.js"
+  },
+  "author": "wacKYJoker",
+  "license": "ISC",
+  "description": ""
+}

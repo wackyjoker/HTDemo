@@ -1,0 +1,75 @@
+<% include partials/header %>
+
+
+<section>
+	
+	<div class="overall-container">
+		<% if(success && success.length>0){%>            <!-- this is for login success flash message -->
+	<div class="success-msg"><span style="margin-left:10%; "><%=success%></span><i class="fa fa-window-close btn-success" aria-hidden="true"></i></div>
+		<%}%>
+	<div class="login-container">
+		<div id="content-container-register">   <!-- register area -->
+	<p style="align-self: center;font-size:30px;">You Don't have an Account?</p>
+	<hr style="margin:20px 10px;width: 80%">
+	<form action="/register" method="POST"><!-- waiting for back-end -->
+
+		<% if(error_msg && error_msg.length >0) {%>
+		<%for(let i = 0 ; i<error_msg.length;i++){ %>
+		<div class="alert-error" role="alert"> 
+			<%= error_msg[i].msg%><i class="fa fa-window-close btn-error" aria-hidden="true"></i>
+		</div>
+		<% }}%>
+		<div>
+			<h4>UserName</h4>
+			<input class="input-childs" type="text" name="username"   placeholder="alphabet&numbers123">
+		</div>
+		<div>
+			<h4>Email Adress</h4>
+			<input class="input-childs" type="email" name="email" placeholder="john@doe.com" >
+		</div>
+		<div>
+			<h4>Password</h4>
+			<input class="input-childs" type="password" name="password" placeholder="password"  >
+		</div>
+		<div>
+			<h4>Confirm Password</h4>
+			<input class="input-childs" type="password" name="passwordConf" placeholder="Type your password again"  >
+		</div>
+		<div>
+			<button type="submit" class="btn-login"><i class="fas fa-users"></i>&nbsp Join Us Now</button>
+		</div>
+	</form>
+		</div><!-- register windows -->
+		<div id="content-container-login"> <!-- login area -->
+	<p style="align-self: center;font-size:30px">Log In First</p>
+	<hr style="margin:20px 10px;width: 80%;">
+	<form action="/logins" method="POST">
+		<div >	
+			<% if(error&& error.length>0) {%>   
+ 		 <%for(var i = 0 ; i<error.length;i++){ %>
+ 		  <div class="alert-error" role="alert"> 
+ 		 <%= error%> <i class="fa fa-window-close btn-error" aria-hidden="true"></i>
+ 		 </div>
+ 		<% }%>
+			<%}%> 
+			<h4>UserName</h4>
+			<input class="input-childs" name="username" type="text"  placeholder="Username/Email" value="">
+		</div>
+		<div>
+			<h4>Password</h4>
+			<input class="input-childs" name="password" type="password"  placeholder="password" value="">
+		</div>
+		<div>
+			<button type="submit"  class="btn-login"><i class="fas fa-sign-in-alt"></i>&nbsp Sign In Now</button>
+		</div>
+	</form>
+		</div> <!-- login windows -->
+</div> <!-- both register and login container -->
+</div> <!-- overall container -->
+</section>
+<script type="text/javascript">
+ 		 	$(".fa-window-close").click(function(event){
+ 		 		$(this).parent().fadeOut(200,function(){
+ 		 			$(this).remove();});});
+			</script> 
+<%include partials/footer%>

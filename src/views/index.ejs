@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This Is A Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="assets/icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/defoo.css">
+	<link rel="icon" href="/favicon.ico">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	
+</head>
+<body>
+		
+<header>
+	
+	<a class="head-anc" href="#"><img src="images/wackybooky1.png" style="min-width: 200px;"></a>
+	<div style="margin-right: 100px;">
+	<nav style="float: right;">
+			<%if(!currentUser){%>  
+		<li><a class="head-anc" href='/login'>Sign in</a></li>
+
+		<% }else{%> 
+			 			<li><a href="#">Welcome <%=currentUser.username %></a></li> 
+		<li><a class="head-anc" href="/logout">Sign out</a></li>
+		<% }%> 
+		<li><a class="head-anc" id="git-tag" href="https://github.com/wackyjoker/HTDemo"><i class="fab fa-github" aria-hidden="true"></i>github</a></li> 	
+	</nav>
+	</div>
+	</header>
+	
+<section class="hero">
+	<div class="bg-img" style="background-image:url(images/bcn-bg.jpg)"></div>
+	<div class="hero-content-area">
+		<h1>Booking Service</h1>
+		<h3 id="s1-h3">Unmissable Adventure Tours Around The World</h3>
+
+		<!--hot fix warning -->
+
+		<!-- shade div -->
+		<div id="cover"></div>
+			<!--popup_box-->
+		<div id="popup_box">    <!-- OUR PopupBox DIV-->
+			
+			<h3 style="color:black;">I'm switching this Into React.js Based Front-end. </br>
+				For now This is just a demo.
+			</h3>  
+			<h5>For More Info Click the Github button on top</h5>
+			<a id="popupBoxClose"><span id="countDown"></span></a>  
+		</div>
+		<!-- end of the hot fix	 -->
+	</div>
+	<form id="search-hotel-form" action="/query" method="GET">
+	<div id="search-bar">
+		<div class="form-items "><input type="text" class="input-childs child1" name="Hotel-location" placeholder="Location ex:Barcelona" ></div>
+		<div class="form-items">
+				<select class="input-childs child2" placeholder='asdasd'>
+				  <option value="volvo">Select Your Area</option>
+				  <option value="saab">Option 1</option>
+				  <option value="mercedes">Option 2</option>
+				  <option value="audi">Option 3</option>
+				</select>
+					</div>
+		<div class="form-items "><input type="text" onfocus="(this.type='date')" class="input-childs child3" name="Hotel-location" placeholder="Check In Date" ></div>
+		<div class="form-items "><input type="text" onfocus="(this.type='date')" class="input-childs child4" name="Hotel-location" placeholder="Check Out Date" ></div>
+		<div class="form-items "><button type="submit" class="input-childs child5">Search Now</button></div>
+
+	</div>
+	</form>
+</section>
+
+<section class="destinations">
+	<div class="s2-textContent">
+	<h3 class="s2-title">Unmissable Adventure Tours Around The World</h3>
+	<p class="s2-p">123 </p>
+
+	<hr id="s2-hr">
+	</div>
+	<!-- <ul class="grid">
+		<li class="small" style="background-image:url(images/s2img1.jpg);"></li>
+		<li class="small" style="background-image:url(images/s2img2.jpg);"></li>
+		<li class="small" style="background-image:url(images/s2img3.jpg);"></li>
+		<li class="small" style="background-image:url(images/s2img4.jpg);"></li>
+	</ul> -->
+	
+		<ul class="s2-list">
+			<li class="s2-img" style="background-image:url(images/cities/Paris-France.jpg)"><div class='overlay-text'>paris-france</div> </li>
+			
+			<li class="s2-img" style="background-image:url(images/cities/Osaka-Japan.jpg);">
+				<div class='overlay-text' style="top:60%;">Osaka-Japan</div> </li>
+			
+			<li class="s2-img" style="background-image:url(images/cities/seville,Spain.jpg)">
+				<div class='overlay-text'>seville-italy</div> </li>
+			
+			<li class="s2-img" style="background-image:url(images/cities/venice-italy.jpg)">
+				<div class='overlay-text'>venice-italy</div> </li>
+
+			<li class="s2-img" style="background-image:url(images/cities/Chaing-Mai-Thailand.jpg)">
+				<div class='overlay-text'>Chaing-Mai-Thailand</div> </li>
+
+			<li class="s2-img" style="background-image:url(images/cities/Madrid-Spain.jpg)">
+				<div class='overlay-text'>madrid-spain</div></li>
+
+			<li id="img-stick" style="background-image:url(images/cities/new-york-NA.jpg)">
+				<div class='overlay-text'>new-york-na</div></li>
+
+			<li class="s2-img" style="background-image:url(images/cities/cologne-germany.jpg)">
+				<div class='overlay-text'>cologne-germany</div></li>
+
+			<li class="s2-img" style="background-image:url(images/cities/Zurich-Switzerland.jpg)"><div class='overlay-text'>zurich-switzerland</div></li>
+
+			<li class="s2-img" style ="background-image:url(images/cities/Amsterdam-Netherlands.jpg); ">
+				<div class='overlay-text' style="line-height:30px; height:5em">amsterdam-netherlands</div></li>
+		</ul>
+	
+
+
+</section>
+
+
+
+
+<script type="text/javascript" src="assets/action.js"></script>
+
+<%include partials/footer%>

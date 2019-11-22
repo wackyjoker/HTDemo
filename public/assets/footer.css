@@ -1,0 +1,66 @@
+
+footer{
+
+	background-color: #4d4d4d;
+	width: 100%;
+	padding: 0 0;
+	position:relative;
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column-reverse;
+	bottom: 0;
+}
+
+.wrapper{
+	padding-top:100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.ft-div{
+	flex-basis:300px;
+	min-width:244px;
+	
+	margin:5px 1% 10px 0;
+}
+#copyrights{
+	color: white;
+	background-color:#1a1a1a;
+	text-align: center;
+	padding: 40px 0;
+	position: relative;
+
+}
+
+hr{
+	width: 15%;
+	float: left;
+
+}
+
+.ft-h3{
+	color:#fff;
+	font-size: 20px;
+}
+
+#ft-content{
+	margin-top: 20px;
+	color: #d9d9d9;
+}
+
+li{
+	margin: 5px 5px;
+	list-style-type: none;
+
+}
+
+#ft-anchor{
+	color: #d9d9d9;
+}
+
+.ft-icon{
+	margin-right: 5px;
+	color:white;
+}
+
