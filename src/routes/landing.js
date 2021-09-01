@@ -43,7 +43,7 @@ router.post("/register",function(req,res,next){
       if (error) {return next(error);
       } else {
         req.session.userId = user._id;
-        req.flash("success","Registed Sucessfully");
+        req.flash("success","Registered Sucessfully");
         return res.redirect('/login');
       }
     });}
